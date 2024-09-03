@@ -177,7 +177,7 @@ We provide script to generate a figures showing the throughput, target input rat
 python3 plotsec64.py deem_dynamic8x2json_custom_1/ deem_dynamic8x2json_even_1/ deem_dynamic8x2json_random_1/ 3000
 ```
 
-![image](https://github.com/user-attachments/assets/a3b949f5-7c7e-400a-9521-ef575f2f95d1)
+![image](readme_fig.png)
 
 Above is an example of generated figure for one run. Red line means throughput, green line means target input rate, and blue line means the number of tasks (resources). The results in Table 4 are summarized from this figure. 
 
