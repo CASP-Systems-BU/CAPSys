@@ -13,7 +13,7 @@ https://github.com/apache/beam/blob/master/sdks/java/testing/nexmark/src/main/ja
 
 ## Queries
 
-
+see https://github.com/pentium3/sys_reading/issues/73#issuecomment-930817091
 
 ### Query1: map + filter + sink
 
