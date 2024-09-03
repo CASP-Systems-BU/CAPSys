@@ -14,29 +14,27 @@ This document describes how to reproduce CAPSys results presented in EuroSys 25 
 
 # Major Claims
 
-- (C1): CAPSys outperforms Flink's default and evenly strategies. This is proven by the experiments (E1) described in Section 6.1 where we compare CAPSys with Flink's default and evenly policies on all six queries described in Section A.2.4.
-    For simplicity, we believe reproducing Figure 7 as described in Section 6.1.1 is sufficient to support the claim. Figure 8 described in Section 6.1.2 simply evaluates the same workload in a larger problem size.
+- (C1): CAPSys outperforms Flink's `default` and `evenly` strategies. This is proven by the experiments ([E1](#experiment-e1)) described in Section 6.1 where we compare CAPSys with Flink's `default` and `evenly` policies on all six queries described in Section A.2.4.
+    We provide instructions on how to reproduce Figure 7, as described in Section 6.1.1, which is sufficient to support the claim. Figure 8, described in Section 6.1.2, evaluates the same workload on a larger problem size.
 
-- (C2): We compare CAPSys with the state-of-the-art ODRP algorithm proposed by Cardellini et al., which can jointly decide the task parallelism and placement of a query. Comparing with CAPSys, the plans generated with different ODRP policies either cannot reach the target throughput and exhibit high backpressure, or shows high resource demand. This is proven by the experiment (E2) described in section 6.2 whose results are reported in Table 3.
+- (C2): We compare CAPSys with the state-of-the-art [ODRP algorithm](https://dl.acm.org/doi/10.1145/3092819.3092823) proposed by Cardellini et al., which can jointly decide the task parallelism and placement of a query. Comparing with CAPSys, the plans generated with different ODRP policies either cannot reach the target throughput and exhibit high backpressure, or shows high resource demand. This is proven by the experiment ([E2](#experiment-e2)), described in Section 6.2, whose results are reported in Table 3.
 
-- (C3): Under variable workloads, CAPSys it can improve the accuracy and convergence of the DS2 auto-scaling controller. This is proven by the experiment (E3) described in Section 6.3. Reproducing results in Table 4 is sufficient to support the claim. 
+- (C3): Under variable workloads, CAPSys can improve the accuracy and convergence of the DS2 auto-scaling controller. This is proven by the experiment ([E3](#experiment-e3)) described in Section 6.3. Reproducing results in Table 4 is sufficient to support the claim.
 
-- (C4): CAPS and auto-tuning can quickly and effectively find satisfying placement plans to support dynamic settings where frequent reconfigurations may occur. This is proven by the experiments (E4) described in Section 6.4 where we measure the runtime of CAPS and auto-tuning on varying problem sizes. For this part, we reproduce results reported in Figure 10.
-
+- (C4): CAPS and auto-tuning can quickly and effectively find satisfying placement plans to support dynamic settings where frequent reconfigurations may occur. This is proven by the experiments ([E4](#experiment-e4)) described in Section 6.4, where we measure the runtime of CAPS and auto-tuning on varying problem sizes. For this part, we reproduce results reported in Figure 10.
 
 # Experiments and expected results
 
-Experiments E1, E2, E3 run on AWS EC2 cluster. The instructions for setting up evaluation environment on AWS can be found [here](./aws/README.md). For simplicity, we have set up AWS clusters for artifact evaluations. Please use our provided SSH key to access them.
+Experiments E1, E2, E3 run on AWS EC2 clusters. The instructions for setting up evaluation environments on AWS can be found [here](./aws/README.md). For simplicity, we have set up AWS clusters for artifact evaluations. Please use our provided SSH key to access them. Experiments E4 runs on Cloudlab instance. The instructions for setting up the evaluation environment on Cloudlab can be found at Preparation section of [Experiment (E4)](#experiment-e4).
 
+_If you need to stop the EC2 clusters and restart at a later time, please pay attention to the following notes. You can ignore the following if you don't want to operate on the EC2 clusters. You can use our provided SSH key to access ready-to-use clusters and let us know once you are done with the experiments_.
 - For experiments on AWS, Flink is running on SSD of the EC2 instances, which will be lost after shutdown. 
-- Everytime before shutdown EC2 cluster, run this script on jobmanager: `cd ~ ;  python3 ec2tools.py backup`. It will  stop Flink cluster and backup all files from SSD to EBS for all node.
-- Everytime after boot up EC2 cluster, run this script on jobmanager: `cd ~ ;  python3 ec2tools.py restore`. It will restore files from EBS to SSD for all node.
-
-Experiments E4 runs on Cloudlab instance. The instructions for setting up evaluation environment on Cloudlab can be found at Preparation section of [Experiment (E4)](#experiment-e4).
+- To persist data in local SSD, please run the following scripts before shutting down EC2 clusters. On jobmanager: `cd ~ ;  python3 ec2tools.py backup`. It will stop Flink cluster and backup all files from SSD to EBS for all nodes.
+- To restore data from EBS to local SSD, please run the following scripts before starting EC2 clusters. On jobmanager: `cd ~ ;  python3 ec2tools.py restore`. It will restore files from EBS to SSD for all node.
 
 ## Experiment (E1):
 
-**[Claim 1] [1 human-hour]**
+**[Claim 1] [40 human-minutes][20+ computer-hours]**
 
 In this experiment, we compare `CAPSys` performance with Flink's `default` and `evenly` polices on six queries described in the paper. Each experiment is repeated 10 times in the paper evaluation to capture the randomness of different placement polices. In the artifact evaluation, for simplicity, we believe 5 repeatations are sufficient to show the performance difference and support the claim.
 
@@ -55,7 +53,7 @@ SSH into the Job Manager node.
 
 ### Execution
 
-- Our script automatically starts Flink cluster, deploy queries, switch to different placement pociles, and repeat experiments. Since this experiment runs for 16h+, we suggest using tmux to execute the experiment in background to avoid terminal connection lost.
+- Our script automatically starts Flink cluster, deploy queries, switch to different placement pociles, and repeat experiments. Since this experiment runs for 20h+, we suggest using tmux to execute the experiment in background to avoid terminal connection lost.
 ```
 tmux
 ```
