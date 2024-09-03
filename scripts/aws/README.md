@@ -114,7 +114,7 @@ showmount -e 192.168.1.6
 
 ```
 cd ~/data/
-git clone git@github.com:pentium3/flink-placement-16.git --branch eurosys25ae
+git clone git@github.com:CASP-Systems-BU/CAPSys.git ~/data/flink-placement-16/
 
 #Compile Flink
 cd ~/data/flink-placement-16/scripts

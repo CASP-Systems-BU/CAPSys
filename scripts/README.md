@@ -199,7 +199,7 @@ In this experiment, we measure the runtime of *CAPS* and *Auto-tuning* on varyin
 2. SSH into the reserved instance. The SSH link is at `SSH command` under `List View`.
 3. Clone the git repository
 ```
-git clone --branch eurosys25ae git@github.com:pentium3/flink-placement-16.git
+git clone git@github.com:CASP-Systems-BU/CAPSys.git ~/data/flink-placement-16/
 ```
 
 5. Configure the environments.
