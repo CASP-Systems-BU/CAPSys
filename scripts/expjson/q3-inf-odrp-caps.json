@@ -1,0 +1,83 @@
+{
+  "expname": "q3_odrp_wr",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/deem22/target/FeedForwardPipeline-jar-with-dependencies.jar",
+  "jarargs": {
+    "experimentTimeInSeconds": "36000",
+    "inputRate": "710",
+    "imgSize": "128",
+    "batchSize": "1",
+    "blurstep": "16",
+    "psrc": "6",
+    "ptra": "9",
+    "pcmp": "6",
+    "pinf": "5",
+    "modelPath": "/home/ubuntu/data/models/"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "",
+  "resetsec": 60,
+  "srcratelist": [{"Source":500}],
+  "oprlist": [{"Transform": "ptra"}, {"Compress": "pcmp"}, {"Inference": "pinf"}],
+  "mapping": {
+    "Source__Source___TimestampAssigner": "Source",
+    "Transform": "Transform",
+    "Compress": "Compress",
+    "Inference": "Inference",
+    "Sink": "Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 8,
+  "schedulercfg1st": [
+    "Q3_Source; 192.168.1.101",
+    "Q3_Source; 192.168.1.101",
+    "Q3_Source; 192.168.1.102",
+    "Q3_Source; 192.168.1.102",
+    "Q3_Source; 192.168.1.103",
+    "Q3_Source; 192.168.1.103",
+    "Q3_Transform; 192.168.1.101",
+    "Q3_Transform; 192.168.1.101",
+    "Q3_Transform; 192.168.1.101",
+    "Q3_Transform; 192.168.1.101",
+    "Q3_Transform; 192.168.1.102",
+    "Q3_Transform; 192.168.1.102",
+    "Q3_Transform; 192.168.1.103",
+    "Q3_Transform; 192.168.1.103",
+    "Q3_Transform; 192.168.1.103",
+    "Q3_Compress; 192.168.1.101",
+    "Q3_Compress; 192.168.1.101",
+    "Q3_Compress; 192.168.1.101",
+    "Q3_Compress; 192.168.1.102",
+    "Q3_Compress; 192.168.1.102",
+    "Q3_Compress; 192.168.1.102",
+    "Q3_Inference; 192.168.1.102",
+    "Q3_Inference; 192.168.1.102",
+    "Q3_Inference; 192.168.1.102",
+    "Q3_Inference; 192.168.1.103",
+    "Q3_Inference; 192.168.1.103",
+    "Q3_Sink; 192.168.1.101"
+  ]
+}
+
+

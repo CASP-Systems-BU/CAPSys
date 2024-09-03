@@ -1,0 +1,87 @@
+[
+    {
+        "compute": 1020.8006690817954,
+        "downNode": [],
+        "id": "a",
+        "name": "DummyLatencySink",
+        "network": 0,
+        "outboundtype": "",
+        "parallelism": 23,
+        "state": 0,
+        "upNode": [
+            "b"
+        ]
+    },
+    {
+        "compute": 1814.4648978057703,
+        "downNode": [
+            "a"
+        ],
+        "id": "b",
+        "name": "Window_TumblingEventTimeWindows_10000___EventTimeTrigger__CoGroupWindowFunction_",
+        "network": 21.584267862840612,
+        "outboundtype": "FORWARD",
+        "parallelism": 272,
+        "state": 35036.00265522144,
+        "upNode": [
+            "c",
+            "e"
+        ]
+    },
+    {
+        "compute": 491.7188415116009,
+        "downNode": [
+            "b"
+        ],
+        "id": "c",
+        "name": "TransformPersons___Map",
+        "network": 11.18420843758241,
+        "outboundtype": "HASH",
+        "parallelism": 47,
+        "state": 0,
+        "upNode": [
+            "d"
+        ]
+    },
+    {
+        "compute": 369.15303991644254,
+        "downNode": [
+            "c"
+        ],
+        "id": "d",
+        "name": "Source__SourcePersons___TimestampAssigner",
+        "network": 12.161411100371256,
+        "outboundtype": "FORWARD",
+        "parallelism": 47,
+        "state": 0,
+        "upNode": []
+    },
+    {
+        "compute": 702.77582018144,
+        "downNode": [
+            "b"
+        ],
+        "id": "e",
+        "name": "TransformAuctions___Map",
+        "network": 13.357130330678565,
+        "outboundtype": "HASH",
+        "parallelism": 154,
+        "state": 0,
+        "upNode": [
+            "f"
+        ]
+    },
+    {
+        "compute": 906.6694404017986,
+        "downNode": [
+            "e"
+        ],
+        "id": "f",
+        "name": "Source__SourceAuctions___TimestampAssigner",
+        "network": 47.344403923314665,
+        "outboundtype": "REBALANCE",
+        "parallelism": 97,
+        "state": 0,
+        "upNode": []
+    }
+]

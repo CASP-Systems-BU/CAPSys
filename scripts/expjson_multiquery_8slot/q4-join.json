@@ -1,0 +1,74 @@
+{
+  "expname": "q3_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query3-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "70000_360000000_63000_360000000",
+    "psa": "6",
+    "psp": "2",
+    "pf": "2",
+    "pj": "12"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":70000}, {"SourcePerson":63000}],
+  "oprlist": [{"Q4_IncrementalJoin": "pj"}, {"Q4_Filter":  "pf"}],
+  "mapping": {
+    "Q4_IncrementalJoin": "Q4_IncrementalJoin",
+    "Source__Q4_SourcePersons": "Q4_SourcePersons",
+    "Source__Q4_SourceAuctions": "Q4_SourceAuctions",
+    "Q4_Sink": "Q4_Sink",
+    "Q4_Filter": "Q4_Filter"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 8,
+  "schedulercfg1st": [
+"Q4_SourceAuctions; 192.168.1.101",
+"Q4_SourceAuctions; 192.168.1.101",
+"Q4_IncrementalJoin; 192.168.1.101",
+"Q4_IncrementalJoin; 192.168.1.101",
+"Q4_IncrementalJoin; 192.168.1.101",
+"Q4_Sink; 192.168.1.101",
+"Q4_SourcePersons; 192.168.1.102",
+"Q4_Filter; 192.168.1.102",
+"Q4_SourceAuctions; 192.168.1.102",
+"Q4_IncrementalJoin; 192.168.1.102",
+"Q4_IncrementalJoin; 192.168.1.102",
+"Q4_IncrementalJoin; 192.168.1.102",
+"Q4_SourcePersons; 192.168.1.103",
+"Q4_Filter; 192.168.1.103",
+"Q4_SourceAuctions; 192.168.1.103",
+"Q4_IncrementalJoin; 192.168.1.103",
+"Q4_IncrementalJoin; 192.168.1.103",
+"Q4_IncrementalJoin; 192.168.1.103",
+"Q4_SourceAuctions; 192.168.1.104",
+"Q4_SourceAuctions; 192.168.1.104",
+"Q4_IncrementalJoin; 192.168.1.104",
+"Q4_IncrementalJoin; 192.168.1.104",
+"Q4_IncrementalJoin; 192.168.1.104"
+  ]
+}
+
+

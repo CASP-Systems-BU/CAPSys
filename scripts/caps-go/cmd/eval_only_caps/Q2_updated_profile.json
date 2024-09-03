@@ -1,0 +1,87 @@
+[
+    {
+        "compute": 29.440462165930246,
+        "downNode": [],
+        "id": "a",
+        "name": "Q2_Sink",
+        "network": 0,
+        "outboundtype": "",
+        "parallelism": 12,
+        "state": 0,
+        "upNode": [
+            "b"
+        ]
+    },
+    {
+        "compute": 1805.3154612190272,
+        "downNode": [
+            "a"
+        ],
+        "id": "b",
+        "name": "TumblingEventTimeWindows",
+        "network": 0.21630513595675718,
+        "outboundtype": "FORWARD",
+        "parallelism": 97,
+        "state": 22165.968199541505,
+        "upNode": [
+            "c",
+            "e"
+        ]
+    },
+    {
+        "compute": 259.5860312616382,
+        "downNode": [
+            "b"
+        ],
+        "id": "c",
+        "name": "Q2_TransformPersons",
+        "network": 3.75662213122628,
+        "outboundtype": "HASH",
+        "parallelism": 12,
+        "state": 0,
+        "upNode": [
+            "d"
+        ]
+    },
+    {
+        "compute": 141.70490435674748,
+        "downNode": [
+            "c"
+        ],
+        "id": "d",
+        "name": "Q2_SourcePersons",
+        "network": 4.081248694715872,
+        "outboundtype": "REBALANCE",
+        "parallelism": 12,
+        "state": 0,
+        "upNode": []
+    },
+    {
+        "compute": 672.3345050415536,
+        "downNode": [
+            "b"
+        ],
+        "id": "e",
+        "name": "Q2_TransformAuctions",
+        "network": 6.954992158181732,
+        "outboundtype": "HASH",
+        "parallelism": 73,
+        "state": 0,
+        "upNode": [
+            "f"
+        ]
+    },
+    {
+        "compute": 672.5732997394383,
+        "downNode": [
+            "e"
+        ],
+        "id": "f",
+        "name": "Q2_SourceAuctions",
+        "network": 22.738861115188772,
+        "outboundtype": "REBALANCE",
+        "parallelism": 50,
+        "state": 0,
+        "upNode": []
+    }
+]

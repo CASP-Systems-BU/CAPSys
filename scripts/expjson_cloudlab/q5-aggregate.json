@@ -1,0 +1,77 @@
+{
+  "expname": "q6_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query6-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "58000_360000000_58000_360000000",
+    "psa": "2",
+    "psb": "2",
+    "pj": "14",
+    "pagg": "6",
+    "psink": "1"
+  },
+  "iplist": [
+    "10.10.1.2",
+    "10.10.1.3",
+    "10.10.1.4",
+    "10.10.1.5"
+  ],
+  "jmip": "10.10.1.1",
+  "kafkaip": "10.10.1.1",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "lei6669",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/users/lei6669/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":58000}, {"SourceBid":58000}],
+  "oprlist": [{"Q5_JoinBidsWithAuctions": "pj"}, {"Q5_AggregateFunction":  "pagg"}],
+  "mapping": {
+    "Q5_AggregateFunction": "Q5_AggregateFunction",
+    "Q5_JoinBidsWithAuctions": "Q5_JoinBidsWithAuctions",
+    "Source__Q5_SourceBid": "Q5_SourceBid",
+    "Source__Q5_SourceAuction": "Q5_SourceAuction",
+    "Q5_Sink": "Q5_Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+"Q5_SourceBid; 10.10.1.5",
+"Q5_SourceAuction; 10.10.1.4",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_JoinBidsWithAuctions; 10.10.1.2",
+"Q5_AggregateFunction; 10.10.1.2",
+"Q5_AggregateFunction; 10.10.1.2",
+"Q5_AggregateFunction; 10.10.1.2",
+"Q5_Sink; 10.10.1.2",
+"Q5_SourceBid; 10.10.1.5",
+"Q5_SourceAuction; 10.10.1.4",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_JoinBidsWithAuctions; 10.10.1.3",
+"Q5_AggregateFunction; 10.10.1.3",
+"Q5_AggregateFunction; 10.10.1.3",
+"Q5_AggregateFunction; 10.10.1.3"
+  ]
+}
+
+

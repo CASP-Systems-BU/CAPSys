@@ -1,0 +1,76 @@
+{
+  "expname": "q3_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query3-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "90000_360000000_72000_360000000",
+    "psa": "12",
+    "psp": "3",
+    "pf": "4",
+    "pj": "4"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104",
+    "192.168.1.106"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":90000}, {"SourcePerson":72000}],
+  "oprlist": [{"IncrementalJoin": "pj"}, {"Filter":  "pf"}],
+  "mapping": {
+    "IncrementalJoin": "IncrementalJoin",
+    "Source__SourcePersons": "SourcePersons",
+    "Source__SourceAuctions": "SourceAuctions",
+    "Sink": "Sink",
+    "Filter": "Filter"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourceAuctions; 192.168.1.101",
+    "SourcePersons; 192.168.1.102",
+    "SourcePersons; 192.168.1.102",
+    "SourcePersons; 192.168.1.102",
+    "Filter; 192.168.1.103",
+    "Filter; 192.168.1.103",
+    "Filter; 192.168.1.103",
+    "Filter; 192.168.1.103",
+    "IncrementalJoin; 192.168.1.104",
+    "IncrementalJoin; 192.168.1.104",
+    "IncrementalJoin; 192.168.1.104",
+    "IncrementalJoin; 192.168.1.104",
+    "Sink; 192.168.1.106"
+  ]
+}
+
+

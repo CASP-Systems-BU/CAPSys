@@ -1,0 +1,57 @@
+[
+  {
+    "id": "a",
+    "name": "Q5_Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 40.10289528494526,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Q5_AggregateFunction",
+    "parallelism": 6,
+    "state": 329546.48478030827,
+    "compute": 800.5248692595923,
+    "network": 0.8253686667718628,
+    "outboundtype": "REBALANCE",
+    "downNode": ["a"],
+    "upNode": ["c"]
+  },
+  {
+    "id": "c",
+    "name": "Q5_JoinBidsWithAuctions",
+    "parallelism": 12,
+    "state": 44430.203097486716,
+    "compute": 930.3991183365727,
+    "network": 0.41282249472935717,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": ["d", "e"]
+  },
+  {
+    "id": "d",
+    "name": "Q5_SourceAuction",
+    "parallelism": 2,
+    "state": 0.0,
+    "compute": 361.49500318300784,
+    "network": 9.362666770670872,
+    "outboundtype": "HASH",
+    "downNode": ["c"],
+    "upNode": []
+  },
+  {
+    "id": "e",
+    "name": "Q5_SourceBid",
+    "parallelism": 2,
+    "state": 0.0,
+    "compute": 140.09981943151865,
+    "network": 3.314840144546088,
+    "outboundtype": "HASH",
+    "downNode": ["c"],
+    "upNode": []
+  }
+]

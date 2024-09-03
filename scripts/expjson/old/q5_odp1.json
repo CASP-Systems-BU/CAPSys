@@ -1,0 +1,59 @@
+{
+  "expname": "q5_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query5-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "50000_360000000",
+    "psrc": "1",
+    "pwindow": "6",
+    "psink": "1"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 60,
+  "srcratelist": [{"Source":50000}],
+  "oprlist": [{"Window": "pwindow"}],
+  "mapping": {
+    "Source__Source___TimestampAssigner": "Source",
+    "Window_SlidingEventTimeWindows_3600000__60000___EventTimeTrigger__CountBids__PassThroughWindowFunction_": "Window",
+    "Sink": "Sink"
+  },
+  "dfs": {
+    "planNum": 10,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.01,
+    "step_ratio_network": 0.1,
+    "step_ratio_multithread": 0.01,
+    "randomOptimal": true
+  },
+  "schedulercfg1st": [
+    "Window; 192.168.1.102",
+    "Window; 192.168.1.102",
+    "Window; 192.168.1.102",
+    "Window; 192.168.1.102",
+    "Window; 192.168.1.102",
+    "Window; 192.168.1.102",
+    "Sink; 192.168.1.102",
+    "Source; 192.168.1.102"
+  ],
+  "_cpcost": {
+    "Source": 0.00137
+  },
+  "extra": {}
+}
+
+

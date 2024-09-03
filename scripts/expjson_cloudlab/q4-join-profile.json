@@ -1,0 +1,76 @@
+{
+  "expname": "q3_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query3-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "90000_360000000_72000_360000000",
+    "psa": "8",
+    "psp": "3",
+    "pf": "6",
+    "pj": "6"
+  },
+  "iplist": [
+    "10.10.1.2",
+    "10.10.1.3",
+    "10.10.1.4",
+    "10.10.1.5",
+    "10.10.1.6"
+  ],
+  "jmip": "10.10.1.1",
+  "kafkaip": "10.10.1.1",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "lei6669",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/users/lei6669/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":90000}, {"SourcePerson":72000}],
+  "oprlist": [{"IncrementalJoin": "pj"}, {"Filter":  "pf"}],
+  "mapping": {
+    "IncrementalJoin": "IncrementalJoin",
+    "Source__SourcePersons": "SourcePersons",
+    "Source__SourceAuctions": "SourceAuctions",
+    "Sink": "Sink",
+    "Filter": "Filter"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourceAuctions; 10.10.1.2",
+    "SourcePersons; 10.10.1.3",
+    "SourcePersons; 10.10.1.3",
+    "SourcePersons; 10.10.1.3",
+    "Filter; 10.10.1.4",
+    "Filter; 10.10.1.4",
+    "Filter; 10.10.1.4",
+    "Filter; 10.10.1.4",
+    "Filter; 10.10.1.4",
+    "Filter; 10.10.1.4",
+    "IncrementalJoin; 10.10.1.5",
+    "IncrementalJoin; 10.10.1.5",
+    "IncrementalJoin; 10.10.1.5",
+    "IncrementalJoin; 10.10.1.5",
+    "IncrementalJoin; 10.10.1.5",
+    "IncrementalJoin; 10.10.1.5",
+    "Sink; 10.10.1.6"
+  ]
+}
+
+

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "a",
+    "name": "DummyLatencySink",
+    "parallelism": 2,
+    "state": 0.0,
+    "compute": 1020.8006690817954,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Window_TumblingEventTimeWindows_10000___EventTimeTrigger__CoGroupWindowFunction_",
+    "parallelism": 23,
+    "state": 35036.00265522144,
+    "compute": 1814.4648978057703,
+    "network": 21.584267862840612,
+    "outboundtype": "FORWARD",
+    "downNode": ["a"],
+    "upNode": ["c", "e"]
+  },
+  {
+    "id": "c",
+    "name": "TransformPersons___Map",
+    "parallelism": 4,
+    "state": 0.0,
+    "compute": 491.7188415116009,
+    "network": 11.18420843758241,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": ["d"]
+  },
+  {
+    "id": "d",
+    "name": "Source__SourcePersons___TimestampAssigner",
+    "parallelism": 4,
+    "state": 0.0,
+    "compute": 369.15303991644254,
+    "network": 12.161411100371256,
+    "outboundtype": "FORWARD",
+    "downNode": ["c"],
+    "upNode": []
+  },
+  {
+    "id": "e",
+    "name": "TransformAuctions___Map",
+    "parallelism": 13,
+    "state": 0.0,
+    "compute": 702.77582018144,
+    "network": 13.357130330678565,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": ["f"]
+  },
+  {
+    "id": "f",
+    "name": "Source__SourceAuctions___TimestampAssigner",
+    "parallelism": 8,
+    "state": 0.0,
+    "compute": 906.6694404017986,
+    "network": 47.344403923314665,
+    "outboundtype": "REBALANCE",
+    "downNode": ["e"],
+    "upNode": []
+  }
+]

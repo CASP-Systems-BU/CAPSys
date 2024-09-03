@@ -1,0 +1,46 @@
+[
+  {
+    "id": "a",
+    "name": "Q1_Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 70.71465591866024,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Q1_SlidingWindow",
+    "parallelism": 22,
+    "state": 13551.463799408752,
+    "compute": 740.9607206209312,
+    "network": 0.2747950480405246,
+    "outboundtype": "REBALANCE",
+    "downNode": ["a"],
+    "upNode": ["c"]
+  },
+  {
+    "id": "c",
+    "name": "Q1_Transform",
+    "parallelism": 8,
+    "state": 0.0,
+    "compute": 500.8045932442046,
+    "network": 0.10881127136598681,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": ["d"]
+  },
+  {
+    "id": "d",
+    "name": "Q1_Source",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 170.86855019505114,
+    "network": 1.7508887818468568,
+    "outboundtype": "REBALANCE",
+    "downNode": ["c"],
+    "upNode": []
+  }
+]

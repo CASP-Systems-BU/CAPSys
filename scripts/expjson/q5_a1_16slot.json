@@ -1,0 +1,48 @@
+{
+  "expname": "q5_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query5-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "38500_360000000",
+    "psrc": "2",
+    "pwindow": "4",
+    "psink": "1"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"Source":38500}],
+  "oprlist": [{"Window": "pwindow"}],
+  "mapping": {
+    "Source__Source___TimestampAssigner": "Source",
+    "Window_SlidingEventTimeWindows_3600000__60000___EventTimeTrigger__CountBids__PassThroughWindowFunction_": "Window",
+    "Sink": "Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+  ]
+}
+
+

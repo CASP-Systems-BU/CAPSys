@@ -1,0 +1,71 @@
+{
+  "expname": "deem_dynamic",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/deem22/target/FeedForwardPipeline-jar-with-dependencies.jar",
+  "jarargs": {
+    "dynamicInputRate": "120_200_240_600_360_600_240_600_120_1200",
+    "imgSize": "128",
+    "batchSize": "1",
+    "blurstep": "16",
+    "psrc": "6",
+    "ptra": "4",
+    "pcmp": "3",
+    "pinf": "1",
+    "psink": "1",
+    "modelPath": "/home/ubuntu/data/models/"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104",
+    "192.168.1.105",
+    "192.168.1.106"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 60,
+  "srcratelist": [{"Source":"120_200_240_600_360_600_240_600_120_1200"}],
+  "oprlist": [{"Transform": "ptra"}, {"Compress": "pcmp"}, {"Inference": "pinf"}, {"Sink": "psink"}],
+  "mapping": {
+    "Source__Q3_Source___TimestampAssigner": "Source",
+    "Q3_Transform": "Transform",
+    "Q3_Compress": "Compress",
+    "Q3_Inference": "Inference",
+    "Q3_Sink": "Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 8,
+  "schedulercfg1st": [
+    "Compress; 192.168.1.101",
+    "Compress; 192.168.1.101",
+    "Source; 192.168.1.101",
+    "Source; 192.168.1.101",
+    "Source; 192.168.1.101",
+    "Transform; 192.168.1.101",
+    "Transform; 192.168.1.101",
+    "Transform; 192.168.1.101",
+    "Compress; 192.168.1.102",
+    "Inference; 192.168.1.102",
+    "Sink; 192.168.1.102",
+    "Source; 192.168.1.102",
+    "Source; 192.168.1.102",
+    "Source; 192.168.1.102",
+    "Transform; 192.168.1.102"
+  ]
+}

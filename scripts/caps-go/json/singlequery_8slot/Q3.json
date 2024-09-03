@@ -1,0 +1,57 @@
+[
+  {
+    "id": "a",
+    "name": "Q3_Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 20.78626895607747,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Q3_Inference",
+    "parallelism": 4,
+    "state": 0.0,
+    "compute": 1100.1707245231992,
+    "network": 0.08037316285317603,
+    "outboundtype": "REBALANCE",
+    "downNode": ["a"],
+    "upNode": ["c"]
+  },
+  {
+    "id": "c",
+    "name": "Q3_Compress",
+    "parallelism": 6,
+    "state": 0.0,
+    "compute": 810.2425064424252,
+    "network": 1.8841116234031605,
+    "outboundtype": "FORWARD",
+    "downNode": ["b"],
+    "upNode": ["d"]
+  },
+  {
+    "id": "d",
+    "name": "Q3_Transform",
+    "parallelism": 8,
+    "state": 0.0,
+    "compute": 870.517294722701,
+    "network": 29.33123891657369,
+    "outboundtype": "FORWARD",
+    "downNode": ["c"],
+    "upNode": ["e"]
+  },
+  {
+    "id": "e",
+    "name": "Q3_Source",
+    "parallelism": 5,
+    "state": 0.0,
+    "compute": 780.6863815445957,
+    "network": 46.948131303920654,
+    "outboundtype": "REBALANCE",
+    "downNode": ["d"],
+    "upNode": []
+  }
+]

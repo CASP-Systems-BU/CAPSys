@@ -1,0 +1,57 @@
+{
+  "expname": "q1_profileSrc",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query1-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "200000_36000000",
+    "psrc": "1",
+    "pmap": "8"
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.103",
+    "192.168.1.104"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "",
+  "resetsec": 60,
+  "srcratelist": [{"Source":200000}],
+  "oprlist": [{"Mapper": "pmap"}],
+  "mapping": {
+    "Mapper": "Mapper",
+    "Sink": "Sink"
+  },
+  "dfs": {
+    "compute": 1.5,
+    "state": 1.7,
+    "network": 0.5,
+    "multithread": 1.5
+  },
+  "schedulercfg1st": [
+    "Mapper; 192.168.1.102",
+    "Mapper; 192.168.1.102",
+    "Mapper; 192.168.1.102",
+    "Mapper; 192.168.1.102",
+    "Mapper; 192.168.1.101",
+    "Mapper; 192.168.1.101",
+    "Mapper; 192.168.1.101",
+    "Mapper; 192.168.1.101",
+    "Sink; 192.168.1.104",
+    "Source; 192.168.1.103"
+  ],
+  "_cpcost": {
+    "Source": 0.00137
+  },
+  "extra": {}
+}
+
+

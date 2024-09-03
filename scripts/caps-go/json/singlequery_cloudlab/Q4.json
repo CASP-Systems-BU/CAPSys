@@ -1,0 +1,57 @@
+[
+  {
+    "id": "a",
+    "name": "Q4_Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 400.87727427880722,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Q4_IncrementalJoin",
+    "parallelism": 12,
+    "state": 2565.1418902251426,
+    "compute": 780.4469420055221,
+    "network": 0.5508471382866499,
+    "outboundtype": "REBALANCE",
+    "downNode": ["a"],
+    "upNode": ["c", "d"]
+  },
+  {
+    "id": "c",
+    "name": "Q4_SourceAuctions",
+    "parallelism": 6,
+    "state": 0.0,
+    "compute": 650.659284891247,
+    "network": 20.599810593723863,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": []
+  },
+  {
+    "id": "d",
+    "name": "Q4_Filter",
+    "parallelism": 2,
+    "state": 0.0,
+    "compute": 400.8017040746942,
+    "network": 4.086073000429839,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": ["e"]
+  },
+  {
+    "id": "e",
+    "name": "Q4_SourcePersons",
+    "parallelism": 2,
+    "state": 0.0,
+    "compute": 430.2386077465784,
+    "network": 8.171914721328987,
+    "outboundtype": "REBALANCE",
+    "downNode": ["d"],
+    "upNode": []
+  }
+]

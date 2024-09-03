@@ -1,0 +1,57 @@
+[
+  {
+    "id": "a",
+    "name": "Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 340.8871757290728,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "Inference",
+    "parallelism": 10,
+    "state": 0.0,
+    "compute": 1501.5583808747622,
+    "network": 0.10657356766311774,
+    "outboundtype": "FORWARD",
+    "downNode": ["a"],
+    "upNode": ["c"]
+  },
+  {
+    "id": "c",
+    "name": "Compress",
+    "parallelism": 16,
+    "state": 0.0,
+    "compute": 555.078481921420188,
+    "network": 2.340610715231696,
+    "outboundtype": "FORWARD",
+    "downNode": ["b"],
+    "upNode": ["d"]
+  },
+  {
+    "id": "d",
+    "name": "Transform",
+    "parallelism": 25,
+    "state": 0.0,
+    "compute": 551.399042770743464,
+    "network": 31.093733132068622,
+    "outboundtype": "FORWARD",
+    "downNode": ["c"],
+    "upNode": ["e"]
+  },
+  {
+    "id": "e",
+    "name": "Source__Source___TimestampAssigner",
+    "parallelism": 12,
+    "state": 0.0,
+    "compute": 762.345823575331683,
+    "network": 65.484877596787413,
+    "outboundtype": "REBALANCE",
+    "downNode": ["d"],
+    "upNode": []
+  }
+]

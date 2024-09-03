@@ -1,0 +1,35 @@
+[
+  {
+    "id": "a",
+    "name": "Q6_Sink",
+    "parallelism": 1,
+    "state": 0.0,
+    "compute": 17.024859693671992,
+    "network": 0.0,
+    "outboundtype": "",
+    "downNode": [],
+    "upNode": ["b"]
+  },
+  {
+    "id": "b",
+    "name": "SessionWindow",
+    "parallelism": 18,
+    "state": 19329.6122882366,
+    "compute": 750.6422810939396,
+    "network": 0.019515728342286872,
+    "outboundtype": "REBALANCE",
+    "downNode": ["a"],
+    "upNode": ["c"]
+  },
+  {
+    "id": "c",
+    "name": "Q6_Source",
+    "parallelism": 4,
+    "state": 0.0,
+    "compute": 137.01318818281925,
+    "network": 5.710682485480859,
+    "outboundtype": "HASH",
+    "downNode": ["b"],
+    "upNode": []
+  }
+]

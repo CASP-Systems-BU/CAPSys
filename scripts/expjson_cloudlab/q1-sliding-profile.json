@@ -1,0 +1,63 @@
+{
+  "expname": "q5m_a",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query5mod-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "70000_36000000",
+    "psrc": "1",
+    "ptrans": "6",
+    "pwindow": "6",
+    "extsize": 100000
+  },
+  "iplist": [
+    "10.10.1.2",
+    "10.10.1.3",
+    "10.10.1.4",
+    "10.10.1.5"
+  ],
+  "jmip": "10.10.1.1",
+  "kafkaip": "10.10.1.1",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "lei6669",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/users/lei6669/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"Source":70000}],
+  "oprlist": [{"Transform": "ptrans"}, {"Window": "pwindow"}],
+  "mapping": {
+    "Source__Q1_Source___TimestampAssigner": "Q1_Source",
+    "Q1_Transform": "Q1_Transform",
+    "Window_SlidingEventTimeWindows_3600000__60000___EventTimeTrigger__BidCountAggregate__AuctionWindowFunction_": "Q1_SlidingWindow",
+    "Q1_Sink": "Q1_Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+"Q1_Source; 10.10.1.2",
+"Q1_Transform; 10.10.1.3",
+"Q1_Transform; 10.10.1.3",
+"Q1_Transform; 10.10.1.3",
+"Q1_Transform; 10.10.1.3",
+"Q1_Transform; 10.10.1.3",
+"Q1_Transform; 10.10.1.3",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_SlidingWindow; 10.10.1.4",
+"Q1_Sink; 10.10.1.5"
+  ]
+}
+

@@ -1,0 +1,74 @@
+{
+  "expname": "q3_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query3-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "47000_360000000_42300_360000000",
+    "psa": "6",
+    "psp": "2",
+    "pf": "2",
+    "pj": "12"
+  },
+  "iplist": [
+    "10.10.1.2",
+    "10.10.1.3",
+    "10.10.1.4",
+    "10.10.1.5"
+  ],
+  "jmip": "10.10.1.1",
+  "kafkaip": "10.10.1.1",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "lei6669",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/users/lei6669/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":47000}, {"SourcePerson":42300}],
+  "oprlist": [{"IncrementalJoin": "pj"}, {"Filter":  "pf"}],
+  "mapping": {
+    "IncrementalJoin": "IncrementalJoin",
+    "Source__SourcePersons": "SourcePersons",
+    "Source__SourceAuctions": "SourceAuctions",
+    "Sink": "Sink",
+    "Filter": "Filter"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+"Q4_SourcePersons; 10.10.1.5",
+"Q4_Filter; 10.10.1.2",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_IncrementalJoin; 10.10.1.2",
+"Q4_SourcePersons; 10.10.1.5",
+"Q4_Filter; 10.10.1.3",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_SourceAuctions; 10.10.1.4",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_IncrementalJoin; 10.10.1.3",
+"Q4_Sink; 10.10.1.3"
+  ]
+}
+
+

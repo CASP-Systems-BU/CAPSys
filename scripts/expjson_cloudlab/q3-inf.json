@@ -1,0 +1,78 @@
+{
+  "expname": "deem_unlimit_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/deem22/target/FeedForwardPipeline-jar-with-dependencies.jar",
+  "jarargs": {
+    "experimentTimeInSeconds": "36000",
+    "inputRate": "470",
+    "imgSize": "128",
+    "batchSize": "1",
+    "blurstep": "16",
+    "psrc": "4",
+    "ptra": "8",
+    "pcmp": "6",
+    "pinf": "4",
+    "modelPath": "/users/lei6669/data/models/"
+  },
+  "iplist": [
+    "10.10.1.2",
+    "10.10.1.3",
+    "10.10.1.4"
+  ],
+  "jmip": "10.10.1.1",
+  "kafkaip": "10.10.1.1",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "lei6669",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "",
+  "resetsec": 60,
+  "srcratelist": [{"Source":470}],
+  "oprlist": [{"Transform": "ptra"}, {"Compress": "pcmp"}, {"Inference": "pinf"}],
+  "mapping": {
+    "Source__Source___TimestampAssigner": "Source",
+    "Transform": "Transform",
+    "Compress": "Compress",
+    "Inference": "Inference",
+    "Sink": "Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+"Q3_Source; 10.10.1.4",
+"Q3_Source; 10.10.1.4",
+"Q3_Source; 10.10.1.4",
+"Q3_Transform; 10.10.1.2",
+"Q3_Transform; 10.10.1.2",
+"Q3_Transform; 10.10.1.2",
+"Q3_Transform; 10.10.1.2",
+"Q3_Compress; 10.10.1.2",
+"Q3_Compress; 10.10.1.2",
+"Q3_Compress; 10.10.1.2",
+"Q3_Compress; 10.10.1.2",
+"Q3_Sink; 10.10.1.2",
+"Q3_Source; 10.10.1.4",
+"Q3_Transform; 10.10.1.2",
+"Q3_Transform; 10.10.1.3",
+"Q3_Transform; 10.10.1.3",
+"Q3_Transform; 10.10.1.3",
+"Q3_Compress; 10.10.1.3",
+"Q3_Compress; 10.10.1.3",
+"Q3_Inference; 10.10.1.3",
+"Q3_Inference; 10.10.1.3",
+"Q3_Inference; 10.10.1.3",
+"Q3_Inference; 10.10.1.3"
+  ]
+}
+
+

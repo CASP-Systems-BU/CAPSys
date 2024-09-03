@@ -1,0 +1,55 @@
+{
+  "expname": "q8m_a1",
+  "ctype": "aws",
+  "jarpath": "/home/ubuntu/data/flink-placement-16/queries/nexmark/target/Query8mod-jar-with-dependencies.jar",
+  "jarargs": {
+    "ratelist": "85000_360000000_48572_360000000",
+    "wtm_ms": "1000",
+    "tw_s": "10",
+    "p_j": "4",
+    "p_sa": "10",
+    "p_sp": "5",
+    "p_ta": "4",
+    "p_tp": "4",
+    "psink": "4",
+    "extsize": 120
+  },
+  "iplist": [
+    "192.168.1.101",
+    "192.168.1.102",
+    "192.168.1.105",
+    "192.168.1.103"
+  ],
+  "jmip": "192.168.1.6",
+  "kafkaip": "192.168.1.6",
+  "iolimit": "NONE",
+  "tclimit": "unlimit",
+  "tcnic": "ens5",
+  "KAFKAROOT": "~/data/",
+  "user": "ubuntu",
+  "jmpt": 8081,
+  "FLINKROOT": "~/data/flink-placement-16",
+  "TMPROOT": "~/data/tmp",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
+  "resetsec": 90,
+  "srcratelist": [{"SourceAuction":85000}, {"SourcePerson":48572}],
+  "oprlist": [{"TransformAuctions": "p_ta"}, {"TransformPersons": "p_tp"}, {"Window": "p_j"}, {"Sink": "psink"}],
+  "mapping": {
+    "TransformAuctions___Map": "TransformAuctions",
+    "TransformPersons___Map": "TransformPersons",
+    "Source__SourcePersons___TimestampAssigner": "SourcePersons",
+    "Source__SourceAuctions___TimestampAssigner": "SourceAuctions",
+    "Window_TumblingEventTimeWindows_10000___EventTimeTrigger__CoGroupWindowFunction_": "Window",
+    "DummyLatencySink": "Sink"
+  },
+  "dfs": {
+    "planNum": 1,
+    "step_ratio_compute": 0.01,
+    "step_ratio_io": 0.1,
+    "step_ratio_network": 0.1,
+    "randomOptimal": true
+  },
+  "workers_slot": 16,
+  "schedulercfg1st": [
+  ]
+}
