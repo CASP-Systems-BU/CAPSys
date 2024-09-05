@@ -165,3 +165,13 @@ cd ~/data/flink-placement-16/scripts/aws
 tiup cluster deploy tidb-test v6.5.0 tidbtopo.yaml
 tiup cluster start tidb-test --init
 ```
+### 9. setup firewall (on every node)
+
+```
+echo y | sudo ufw enable
+sudo systemctl start ufw
+sudo systemctl enable ufw
+sudo ufw allow from 192.168.1.0/24
+sudo ufw allow from $YOURIP$
+sudo ufw status
+```
