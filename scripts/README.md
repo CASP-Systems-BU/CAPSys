@@ -163,7 +163,7 @@ Use the following command to run experiments:
 python3 rundynamic2all.py expjson/deem_dynamic8x2.json deem_dynamic8x2_profilejson_profile_iter0/jg.pkl 8
 ```
 
-Note that the last argument `8` means repeating the experiment for 8 times. Since there are randomness in Flink policies and inaccuracy of profiling data, we suggest running the experiment for 8-10 times.
+Note that the last argument `8` means repeating the experiment for 8 times. Because of the randomness in Flink policies and possible inaccuracy of profiling data, we suggest running the experiment 8-10 times.
 For the X-th run, the results are saved in `deem_dynamic8x2json_custom_X`, `deem_dynamic8x2json_even_X`, `deem_dynamic8x2json_random_X` . 
 
 ### Results
