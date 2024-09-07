@@ -85,7 +85,7 @@ public class Query6 {
         env.getConfig().setLatencyTrackingInterval(LATENCY_INTERVAL);
         env.getConfig().setGlobalJobParameters(params);
 
-        //  --ratelist 127000_72000000_68300_72000000 --psa 1 --psb 1 --pj 22 --pagg 6 --psink 1
+        //  --ratelist 67000_72000000_38300_72000000 --psa 2 --psb 2 --pj 16 --pagg 2 --psink 1
         int[] numbers = Arrays.stream(ratelist.split("_"))
                 .mapToInt(Integer::parseInt)
                 .toArray();
@@ -194,14 +194,12 @@ public class Query6 {
         @Override
         public void processElement1(Bid bid, Context ctx, Collector<Tuple2<Long, Long>> out) throws Exception {
             bidState.add(bid);
-            System.out.println("incoming Bid ==== "+bid);
         }
 
         @Override
         public void processElement2(Auction auction, Context ctx, Collector<Tuple2<Long, Long>> out) throws Exception {
             auctionState.add(auction);
             ctx.timerService().registerEventTimeTimer(auction.expires);
-            System.out.println("incoming Auction ==== "+auction);
         }
 
         @Override
