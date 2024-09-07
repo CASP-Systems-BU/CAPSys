@@ -32,7 +32,7 @@ WARMUP=6*60
 WARMUP1ST=35*60
 # activation time: period(sec) of each iteration
 #RUNPERD=15*60
-RUNPERD=10*60
+RUNPERD=5*60
 # policy interval: frequency of profiling in each period
 RUNFREQ=5
 

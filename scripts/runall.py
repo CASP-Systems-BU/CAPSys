@@ -52,15 +52,15 @@ else:
     
     changeConfigFileOnScheduling("custom")
     RUNID_custom = RUNID + "_custom"
-    for rx in range(5):
+    for rx in range(7):
         os.system("python3 runds2placement.py "+fjson+" start "+RUNID_custom+str(rx)+" "+START_ITER + " custom")
 
     changeConfigFileOnScheduling("even")
     RUNID_even = RUNID + "_even"
-    for rx in range(5):
+    for rx in range(7):
         os.system("python3 runds2placement.py "+fjson+" start "+RUNID_even+str(rx)+" "+START_ITER + " even")
 
     changeConfigFileOnScheduling("random")
     RUNID_random = RUNID + "_random"
-    for rx in range(5):
+    for rx in range(7):
         os.system("python3 runds2placement.py "+fjson+" start "+RUNID_random+str(rx)+" "+START_ITER + " random")

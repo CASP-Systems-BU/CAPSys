@@ -26,7 +26,7 @@
   "jmpt": 8081,
   "FLINKROOT": "~/data/flink-placement-16",
   "TMPROOT": "~/data/tmp",
-  "SAVEROOT": "",
+  "SAVEROOT": "/home/ubuntu/data/savepoint",
   "resetsec": 90,
   "srcratelist": [{"SourceAuction":118000}, {"SourceBid":118000}],
   "oprlist": [{"Q5_JoinBidsWithAuctions": "pj"}, {"Q5_AggregateFunction":  "pagg"}],
