@@ -154,16 +154,16 @@ This experiment is performed on a cluster of r5d.xlarge AWS instances. The clust
 
 ### Execution
 
-In our AWS environment, we have profiled Q3-Inf query and put the profile data under `./scripts/q3-inf-profilejson_profile_iter0/`. So you can skip the profiling step.
-Use the following command if you want to profile by yourself: `python3 runds2placement.py expjson_singlequery_8slot/q3-inf-profile.json start profile 0 custom`
+In our AWS environment, we have profiled Q3-Inf query and put the profile data under `./scripts/deem_dynamic8x2_profilejson_profile_iter0/`. So you can skip the profiling step.
+Use the following command if you want to profile by yourself: `python3 runds2placement.py expjson/deem_dynamic8x2_profile.json start profile 0 custom`
 
 Use the following command to run experiments:
 
 ```
-python3 rundynamic2all.py expjson/deem_dynamic8x2.json q3-inf-profilejson_profile_iter0/jg.pkl 8
+python3 rundynamic2all.py expjson/deem_dynamic8x2.json deem_dynamic8x2_profilejson_profile_iter0/jg.pkl 8
 ```
 
-Note that the last argument `8` means repeating the experiment for 8 times. Since there are randomness in Flink policies, we suggest running the experiment for 8-10 times.
+Note that the last argument `8` means repeating the experiment for 8 times. Because of the randomness in Flink policies and possible inaccuracy of profiling data, we suggest running the experiment 8-10 times.
 For the X-th run, the results are saved in `deem_dynamic8x2json_custom_X`, `deem_dynamic8x2json_even_X`, `deem_dynamic8x2json_random_X` . 
 
 ### Results
