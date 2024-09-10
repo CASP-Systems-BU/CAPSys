@@ -25,7 +25,7 @@ This document describes how to reproduce CAPSys results presented in EuroSys 25 
 
 # Experiments and expected results
 
-Experiments E1, E2, E3 run on AWS EC2 clusters. For simplicity, we have set up ready-to-use AWS clusters for artifact evaluations. Please use our provided SSH key to access them. If you want to setup your own AWS cluster for evaluation, please see instructions [here](./aws/README.md). [not recommend]
+Experiments E1, E2, E3 run on AWS EC2 clusters. For simplicity, we have set up ready-to-use AWS clusters for artifact evaluations. Please use our provided SSH key to access them. If you want to setup your own AWS cluster for evaluation (not recommend), please see instructions [here](./aws/README.md).
 
 Experiments E4 runs on Cloudlab instance. The instructions for setting up the evaluation environment on Cloudlab can be found at Preparation section of [Experiment (E4)](#experiment-e4).
 
