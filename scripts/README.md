@@ -36,7 +36,7 @@ _If you need to stop the EC2 clusters and restart at a later time, please pay at
 
 ## Experiment (E1):
 
-**[Claim 1] [40 human-minutes][20+ computer-hours]**
+**[Claim 1] [40 human-minutes][30+ computer-hours]**
 
 In this experiment, we compare `CAPSys` performance with Flink's `default` and `evenly` polices on six queries described in the paper. Each experiment is repeated 10 times in the paper evaluation to capture the randomness of different placement polices. In the artifact evaluation, for simplicity, we believe 5 repeatations are sufficient to show the performance difference and support the claim.
 
@@ -84,7 +84,7 @@ There will be 6 figures corresponding to 6 queries generated under the current f
 
 ## Experiment (E2):
 
-**[Claim 2] [1 human-hours]**
+**[Claim 2] [1 human-hours][1+ computer-hours]**
 
 This experiment compare CAPSys with the state-of-the-art ODRP algorithm proposed by Cardellini et al.
 
