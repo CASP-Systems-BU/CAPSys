@@ -28,7 +28,7 @@
   "TMPROOT": "~/data/tmp",
   "SAVEROOT": "/home/ubuntu/data/savepoint",
   "resetsec": 90,
-  "srcratelist": [{"SourceAuction":58000}, {"SourceBid":58000}],
+  "srcratelist": [{"SourceAuction":59300}, {"SourceBid":59300}],
   "oprlist": [{"Q5_JoinBidsWithAuctions": "pj"}, {"Q5_AggregateFunction":  "pagg"}],
   "mapping": {
     "Q5_AggregateFunction": "Q5_AggregateFunction",
