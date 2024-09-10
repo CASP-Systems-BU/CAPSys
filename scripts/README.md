@@ -25,7 +25,9 @@ This document describes how to reproduce CAPSys results presented in EuroSys 25 
 
 # Experiments and expected results
 
-Experiments E1, E2, E3 run on AWS EC2 clusters. The instructions for setting up evaluation environments on AWS can be found [here](./aws/README.md). For simplicity, we have set up AWS clusters for artifact evaluations. Please use our provided SSH key to access them. Experiments E4 runs on Cloudlab instance. The instructions for setting up the evaluation environment on Cloudlab can be found at Preparation section of [Experiment (E4)](#experiment-e4).
+Experiments E1, E2, E3 run on AWS EC2 clusters. For simplicity, we have set up ready-to-use AWS clusters for artifact evaluations. Please use our provided SSH key to access them. If you want to setup your own AWS cluster for evaluation, please see instructions [here](./aws/README.md). [not recommend]
+
+Experiments E4 runs on Cloudlab instance. The instructions for setting up the evaluation environment on Cloudlab can be found at Preparation section of [Experiment (E4)](#experiment-e4).
 
 _If you need to stop the EC2 clusters and restart at a later time, please pay attention to the following notes. You can ignore the following if you don't want to operate on the EC2 clusters. You can use our provided SSH key to access ready-to-use clusters and let us know once you are done with the experiments_.
 - For experiments on AWS, Flink is running on SSD of the EC2 instances, which will be lost after shutdown. 
