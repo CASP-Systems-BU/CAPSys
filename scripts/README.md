@@ -163,7 +163,7 @@ For the X-th run, the results are saved in `deem_dynamic8x2json_custom_X`, `deem
 ### Results
 
 
-We provide script to generate a figures showing the throughput, target input rate, and resources over time:
+We provide script to generate figure(s) showing the throughput, target input rate, and resources over time. The following command generate the plot for 1 run specified by `_[number]` after _custom/_even/_random. It will generate a .pdf file in current folder corresponding to the figure. Please remotely copy it to your local machine for visualization. Ideally, plot for 1 run should be sufficient to verify our claim, but feel free to check on results for more runs by executing the following command multiple times with different `_[number]`.
 
 ```
 python3 plotsec64.py deem_dynamic8x2json_custom_1/ deem_dynamic8x2json_even_1/ deem_dynamic8x2json_random_1/ 3000
