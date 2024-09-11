@@ -80,7 +80,7 @@ tmux attach -t [sessino id which can be lookup through list-sessions]
 cd /home/ubuntu/data/flink-placement-16/scripts/plot61
 python3 plot61.py
 ```
-There will be 6 figures corresponding to 6 queries generated under the current folder. Please remotely copy the generated figures to local machine for visualization. The generated figures should be similar to Figure 7.
+There will be 6 figures corresponding to 6 queries generated under the current folder. Please remotely copy the generated figures to local machine for visualization. The generated figures should be similar to Figure 7. Note that E1 has randomness towards the placement plans generated, and we reduce the number of experiments repeated for shorter evaluation time. Therefore, there could be different shapes of the figures but `CAPSys` should generally outperform Flink `default` and `evenly`.
 
 ## Experiment (E2):
 
