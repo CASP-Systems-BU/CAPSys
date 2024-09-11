@@ -136,7 +136,7 @@ The backpressure, throughput, average latency, resources of different policy sho
 
 ## Experiment (E3):
 
-**[Claim 3] [24 compute-hours]**
+**[Claim 3] [0.5 human-hour][24 compute-hour]**
 
 This experiment shows that under variable workloads,  CAPSys it can improve the accuracy and convergence of the DS2 auto-scaling controller. 
 
@@ -181,7 +181,7 @@ Due to the randomness of Evenly and Default policy, the result may be different 
 
 ## Experiment (E4):
 
-**[Claim 4] [0.5 human-hour]**
+**[Claim 4] [0.5 human-hour][0.5 compute-hour]**
 
 In this experiment, we measure the runtime of *CAPS* and *Auto-tuning* on varying problem sizes to demonstrate they can quickly identify satisfactory placement plans. We use Cloudlab *c220g2* instance (20 cores, 160GB memory) for the evaluation.
 
