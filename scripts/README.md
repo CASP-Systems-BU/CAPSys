@@ -36,7 +36,7 @@ _If you need to stop the EC2 clusters and restart at a later time, please pay at
 
 ## Experiment (E1):
 
-**[Claim 1] [40 human-minutes][30+ computer-hours]**
+**[Claim 1] [40 human-minutes][30 computer-hours]**
 
 In this experiment, we compare `CAPSys` performance with Flink's `default` and `evenly` polices on six queries described in the paper. Each experiment is repeated 10 times in the paper evaluation to capture the randomness of different placement polices. In the artifact evaluation, for simplicity, we believe 5 repeatations are sufficient to show the performance difference and support the claim.
 
@@ -80,7 +80,7 @@ tmux attach -t [sessino id which can be lookup through list-sessions]
 cd /home/ubuntu/data/flink-placement-16/scripts/plot61
 python3 plot61.py
 ```
-There will be 6 figures corresponding to 6 queries generated under the current folder. Please remotely copy the generated figures to local machine for visualization. The generated figures should be similar to Figure 7.
+There will be 6 figures corresponding to 6 queries generated under the current folder. Please remotely copy the generated figures to local machine for visualization. The generated figures should be similar to Figure 7. Note that E1 has randomness towards the placement plans generated, and we reduce the number of experiments repeated for shorter evaluation time. Therefore, there could be different shapes of the figures but `CAPSys` should generally outperform Flink `default` and `evenly`.
 
 ## Experiment (E2):
 
@@ -136,7 +136,7 @@ The backpressure, throughput, average latency, resources of different policy sho
 
 ## Experiment (E3):
 
-**[Claim 3] [24 compute-hours]**
+**[Claim 3] [0.5 human-hour][24 compute-hour]**
 
 This experiment shows that under variable workloads,  CAPSys it can improve the accuracy and convergence of the DS2 auto-scaling controller. 
 
@@ -163,7 +163,7 @@ For the X-th run, the results are saved in `deem_dynamic8x2json_custom_X`, `deem
 ### Results
 
 
-We provide script to generate a figures showing the throughput, target input rate, and resources over time:
+We provide script to generate figure(s) showing the throughput, target input rate, and resources over time. The following command generate the plot for 1 run specified by `_[number]` after _custom/_even/_random. It will generate a .pdf file in current folder corresponding to the figure. Please remotely copy it to your local machine for visualization. Ideally, plot for 1 run should be sufficient to verify our claim, but feel free to check on results for more runs by executing the following command multiple times with different `_[number]`.
 
 ```
 python3 plotsec64.py deem_dynamic8x2json_custom_1/ deem_dynamic8x2json_even_1/ deem_dynamic8x2json_random_1/ 3000
@@ -181,7 +181,7 @@ Due to the randomness of Evenly and Default policy, the result may be different 
 
 ## Experiment (E4):
 
-**[Claim 4] [0.5 human-hour]**
+**[Claim 4] [0.5 human-hour][0.5 compute-hour]**
 
 In this experiment, we measure the runtime of *CAPS* and *Auto-tuning* on varying problem sizes to demonstrate they can quickly identify satisfactory placement plans. We use Cloudlab *c220g2* instance (20 cores, 160GB memory) for the evaluation.
 
