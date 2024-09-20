@@ -199,7 +199,7 @@ ax[0].set_xticklabels(xLabel, fontsize=bottomTickSize)
 ax[0].tick_params(axis='y', labelsize=tickSize)
 # ax[0].set_ylim([10800, targetTput+280])
 ax[0].yaxis.set_major_formatter(format_func)
-# targetTput = 100000
+targetTput = 118600
 ax[0].axhline(y=targetTput, color='green', linestyle='--')
 # ax[0].set_xlabel("(a) Throughput", fontsize=labelSize)
 
