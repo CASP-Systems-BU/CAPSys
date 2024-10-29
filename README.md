@@ -5,5 +5,6 @@ This repository contains instructions for reproducing the experiments in [our Eu
 
 CAPSys is an adaptive resource controller for dataflow stream processors, that considers auto-scaling and task placement in concert. CAPSys relies on Contention-Aware Placement Search (CAPS), a new placement strategy that ensures compute-intensive, I/O-intensive, and network-intensive tasks are balanced across available resources. We integrate CAPSys with Apache Flink and show that it consistently achieves higher throughput and lower backpressure than Flink's strategies, while it also improves the convergence of the DS2 auto-scaling controller under variable workloads. When compared with the state-of-the-art ODRP placement strategy, CAPSys computes the task placement in orders of magnitude lower time and achieves up to 6X higher throughput. The experiments require both AWS and Cloudlab resources to support the above claims.
 
+For more CAPS implementation details, refer [here](https://docs.google.com/document/d/1QrGuZPDdVcQ6zthzE0eBoADY_VnkqEVUv48UTxLwJKI/edit?usp=sharing).
 
-### Please check [here](https://github.com/CASP-Systems-BU/CAPSys/tree/main/scripts#readme) for detailed instructions.
+### Please check [here](https://github.com/CASP-Systems-BU/CAPSys/tree/main/scripts#readme) for detailed execution instructions.
