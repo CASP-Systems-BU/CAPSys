@@ -2,9 +2,10 @@ schedulercfg*
 main
 .eslintcache
 .cache
+.github
 scalastyle-output.xml
 .classpath
-.idea/*
+.idea
 !.idea/vcs.xml
 .metadata
 .settings
@@ -12,7 +13,7 @@ scalastyle-output.xml
 .version.properties
 filter.properties
 logs.zip
-.mvn/wrapper/*.jar
+.mvn
 target
 tmp
 *.class
